@@ -1,0 +1,81 @@
+function system_info
+{
+   echo "*****************System Info*************"
+}
+function show_uptime
+{
+    echo "<h2>System uptime</h2>"
+    echo "<pre>"
+    uptime
+    echo "</pre>"
+}
+function drive_space
+{
+    echo "<h2>Filesystem space</h2>"
+    echo "<pre>"
+    df
+    echo "</pre>"
+}
+function home_space
+{
+  # Only the superuser can get this information
+
+    if [ "$(id -u)" = "0" ]; then
+        echo "<h2>Home directory space by user</h2>"
+        echo "<pre>"
+        echo "Bytes Directory"
+        du -s /home/* | sort -nr
+        echo "</pre>"
+    fi
+}
+
+function system_page
+{
+title="System Info"
+cat << _eof_
+    <!DOCTYPE html>
+      <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <title> $title </title>
+      </head>
+      <body>
+        <h1> $HOSTNAME  </h1>
+        <h3>The current: time is $(date +%D) by $USER </h3>
+        $(show_uptime)
+        $(drive_space)
+        $(home_space)
+      </body>
+    </html>
+_eof_
+
+}
+
+function usage
+{
+    echo "usage: system_page [[[-f file ] [-i]] | [-h]] "
+}
+# Main Menu start here!
+filename=~/system_page.html
+while [ "$1" != ""  ]; do 
+case $1 in 
+    -f | --file ) shift
+                  echo ¨$1¨
+                  filename = $1
+                  
+        ;;
+    -i | --interactive ) echo -n "Enter name of output file [ $filename ]"
+                         read file
+                         echo "output file is $file" 
+                         filename="$file"
+        ;;
+    -h | --help ) usage
+                 
+                  exit 1
+                  ;;
+    * ) usage
+        exit 1
+         
+esac
+shift
+done
+system_page > $filename
