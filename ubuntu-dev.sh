@@ -12,6 +12,7 @@ echo "------ java installation begin ------"
 if [ ! -f java.tar.gz ]; then
 wget -O java.tar.gz --tries=2 --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
 fi
+tar -zxvf java.tar.gz -C tools/
 
 echo "------ java installation done ! ------"
 
