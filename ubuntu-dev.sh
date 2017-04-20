@@ -24,6 +24,7 @@ if [ ! -f maven.tar.gz ]; then
   wget -O maven.tar.gz --tries=2 http://apache.communilink.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
 fi
 tar xzvf maven.tar.gz -C ~/tools/
+sudo update-alternatives --install /usr/local/bin/mvn mvn ~/tools/apache-maven-3.5.0/bin/mvn 100
 
 echo "------ maven installation done ! ------"
 
