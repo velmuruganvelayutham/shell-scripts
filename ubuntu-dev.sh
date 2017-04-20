@@ -9,6 +9,10 @@ ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
 echo "------ eclipse installation done ! ------\n"
 
 echo "------ java installation begin ------"
+if [ ! -f java.tar.gz ]; then
+wget -O java.tar.gz --tries=2 --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
+fi
+
 echo "------ java installation done ! ------"
 
 echo "------ maven installation begin ------"
