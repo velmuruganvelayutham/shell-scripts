@@ -9,7 +9,9 @@ if [ ! -f eclipse.tar.gz ]; then
 fi
 
 tar -zxf eclipse.tar.gz -C ~/$SOURCE_DIR/
-sudo ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
+if [ ! -L /usr/local/bin/eclipse ]; then
+   sudo ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
+fi
 echo "------ eclipse installation done ! ------\n"
 
 echo "------ java installation begin ------"
