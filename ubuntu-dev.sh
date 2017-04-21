@@ -30,10 +30,11 @@ echo "------ maven installation done ! ------"
 
 echo "------ git installation begin ------"
 sudo apt-get -y install git
-
+git version && echo "OK Git"
 echo "------ git installation done ! ------"
 
 echo "------ docker installation begin ------"
+
 echo "------ docker installation done ! ------"
 
 echo "------ mysql installation begin ------"
