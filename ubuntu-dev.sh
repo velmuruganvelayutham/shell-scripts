@@ -15,7 +15,7 @@ fi
 tar -zxvf java.tar.gz -C ~/tools/
 sudo update-alternatives --install /usr/local/bin/java java ~/tools/jdk1.8.0_112/bin/java 100
 sudo update-alternatives --install /usr/local/bin/javac javac ~/tools/jdk1.8.0_112/bin/javac 100
-java -version
+java -version && echo "OK Java"
 echo "------ java installation done ! ------"
 
 
@@ -25,7 +25,7 @@ if [ ! -f maven.tar.gz ]; then
 fi
 tar xzvf maven.tar.gz -C ~/tools/
 sudo update-alternatives --install /usr/local/bin/mvn mvn ~/tools/apache-maven-3.5.0/bin/mvn 100
-
+mvn --version && echo "OK Maven"
 echo "------ maven installation done ! ------"
 
 echo "------ git installation begin ------"
