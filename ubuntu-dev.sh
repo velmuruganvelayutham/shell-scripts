@@ -5,7 +5,7 @@ if [ ! -f eclipse.tar.gz ]; then
 fi
 mkdir tools
 tar -zxf eclipse.tar.gz -C ~/tools/
-ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
+sudo ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
 echo "------ eclipse installation done ! ------\n"
 
 echo "------ java installation begin ------"
