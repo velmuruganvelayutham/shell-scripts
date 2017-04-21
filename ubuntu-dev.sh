@@ -29,6 +29,8 @@ mvn --version && echo "OK Maven"
 echo "------ maven installation done ! ------"
 
 echo "------ git installation begin ------"
+sudo apt-get -y install git
+
 echo "------ git installation done ! ------"
 
 echo "------ docker installation begin ------"
