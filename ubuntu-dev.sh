@@ -1,7 +1,7 @@
 #!/bin/bash
 SOURCE_DIR = "tools"
 if [ ! -d "$SOURCE_DIR" ]; then
-   mkdir $SOURCE_DIR
+   mkdir "$SOURCE_DIR"
 fi
 echo "------ eclipse installation begin ------"
 if [ ! -f eclipse.tar.gz ]; then
