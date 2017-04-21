@@ -10,7 +10,7 @@ fi
 
 tar -zxf eclipse.tar.gz -C ~/$SOURCE_DIR/
 if [ ! -L /usr/local/bin/eclipse ]; then
-   sudo ln -s ~/tools/eclipse/eclipse /usr/local/bin/eclipse
+   sudo ln -s ~/$SOURCE_DIR/eclipse/eclipse /usr/local/bin/eclipse
 fi
 echo "------ eclipse installation done ! ------\n"
 
